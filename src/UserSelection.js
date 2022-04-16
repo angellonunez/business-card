@@ -1,5 +1,4 @@
 import React from 'react';
-import Info from './Info';
 
 export default function UserSelection() {
     function changeName() {
@@ -44,6 +43,15 @@ export default function UserSelection() {
         }
     }
 
+    function changeInterests() {
+        const myInterests = document.getElementById('interests-paragraph')
+        const text = document.getElementById('text-interests');
+
+        if(text.value) {
+            myInterests.innerText = text.value;
+        }
+    }
+
 
     return (
         <div className='user-selection'>
@@ -71,6 +79,11 @@ export default function UserSelection() {
                 <p>Change your About info here</p>
                 <input type='text' id='text-about'/>
                 <button id='click-me' onClick={changeAbout}>Click me</button>
+            </div>
+            <div className='changer'>
+                <p>Change your Interests info here</p>
+                <input type='text' id='text-interests'/>
+                <button id='click-me' onClick={changeInterests}>Click me</button>
             </div>
         </div>
     )
